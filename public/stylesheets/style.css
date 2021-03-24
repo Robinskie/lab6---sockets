@@ -1,8 +1,106 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+}
+
 body {
-  padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('/images/tic-tac-toe.png');
+  color: #2a2c2e;
 }
 
 a {
   color: #00B7FF;
 }
+
+/* DASHBOARD */
+.dashboard-container, .leaderboard-container {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 48px;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 4px solid rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  background-color: white;
+}
+
+.dashboard-container .alert {
+  display: inline-block;
+  width: 100%;
+  padding: 4px 8px;
+  background-color: #CDE8F5;
+  border: 1px solid #9ec8dd;
+  border-radius: 6px;
+  color: #5D93BB;
+  margin-bottom: 12px;
+}
+
+.dashboard-container h1, .leaderboard-container h1 {
+  margin-bottom: 8px;
+}
+
+.dashboard-container span {
+  margin-bottom: 8px;
+} 
+
+.dashboard-container label {
+  display: inline-block;
+  min-width: 52px;
+}
+
+.dashboard-container select, .dashboard-container input {
+  display: inline-block;
+  width: 196px;
+}
+
+.dashboard-container input {
+  padding-left: 4px;
+}
+
+.dashboard-container button {
+  padding: 8px;
+  background-color: #0081FF;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  outline: none;
+}
+
+.dashboard-container button:hover {
+  cursor: pointer;
+  background-color: #65aff8;
+}
+
+/* LEADERBOARDS */
+.leaderboard-container {
+  min-width: 480px;
+}
+
+.leaderboard-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: bold;
+  padding: 4px 0px;
+}
+
+.leaderboard-container li {
+  padding: 4px 0px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.leaderboard-container li:last-child {
+  border-bottom: none;
+} 
