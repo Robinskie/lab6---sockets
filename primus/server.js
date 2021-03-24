@@ -2,9 +2,25 @@ const Primus = require('primus');
 
 const teams = [
   {
-    name: 'De Spoider Lonky Legs',
+    name: '🌹 Boston Flowers',
     score: 0,
-  }
+  },
+  {
+    name: '🌞 Hellmouth Sunbeams',
+    score: 0,
+  },
+  {
+    name: '👟 Charleston Shoe Thieves',
+    score: 0,
+  },
+  {
+    name: '🍬 Kansas City Breath Mints',
+    score: 0,
+  },
+  {
+    name: '🌮 LA Unlimited Tacos',
+    score: 0,
+  },
 ];
 
 const go = (server) => {
@@ -12,6 +28,8 @@ const go = (server) => {
 
   primus.on('connection', (spark) => {
     console.log("⚡️ we have a spark");
+
+    spark.write(teams);
 
     spark.on("data", (data) => {
       console.log(data);
