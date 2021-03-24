@@ -26,6 +26,7 @@ a {
 /* DASHBOARD */
 .dashboard-container, .leaderboard-container {
   display: flex;
+  min-width: 420px;
   flex-direction: column;
   padding: 32px 48px;
   border: 1px solid rgba(0, 0, 0, 0.15);
@@ -35,7 +36,7 @@ a {
 }
 
 .dashboard-container .alert {
-  display: inline-block;
+  display: none;
   width: 100%;
   padding: 4px 8px;
   background-color: #CDE8F5;
@@ -50,6 +51,8 @@ a {
 }
 
 .dashboard-container span {
+  display: flex;
+  justify-content: space-between;
   margin-bottom: 8px;
 } 
 
@@ -60,7 +63,7 @@ a {
 
 .dashboard-container select, .dashboard-container input {
   display: inline-block;
-  width: 196px;
+  width: 100%;
 }
 
 .dashboard-container input {
@@ -82,10 +85,6 @@ a {
 }
 
 /* LEADERBOARDS */
-.leaderboard-container {
-  min-width: 480px;
-}
-
 .leaderboard-header {
   display: flex;
   justify-content: space-between;

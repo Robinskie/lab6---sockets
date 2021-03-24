@@ -3,23 +3,23 @@ const Primus = require('primus');
 const teams = [
   {
     name: '🌹 Boston Flowers',
-    score: 0,
+    score: 8,
   },
   {
     name: '🌞 Hellmouth Sunbeams',
-    score: 0,
+    score: 5,
   },
   {
     name: '👟 Charleston Shoe Thieves',
-    score: 0,
+    score: 4,
   },
   {
     name: '🍬 Kansas City Breath Mints',
-    score: 0,
+    score: 3,
   },
   {
     name: '🌮 LA Unlimited Tacos',
-    score: 0,
+    score: 10,
   },
 ];
 
@@ -31,8 +31,15 @@ const go = (server) => {
 
     spark.write(teams);
 
+    // Team update gestuurd !!
     spark.on("data", (data) => {
-      console.log(data);
+      // Verander team met deze naam
+      // Zoek team met de juiste naam
+      const team = teams.find(team => { return team.name == data.name; });
+      team.score = parseInt(data.score);
+
+      // Terug sturen naar alle leaderboards
+      primus.write(teams);
     });
   });
 }
