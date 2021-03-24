@@ -43,6 +43,10 @@ updateButton.addEventListener('click', () => {
     alertSpan.style.display = 'block';
     alertSpan.innerHTML = `${teamInput.value} has been updated!`;
 
+    // Fix if input is 0
+    if(scoreInput.value == '' || scoreInput.value < 0)
+        scoreInput.value = 0;
+
     // Sturen naar de server
     primus.write({name: teamInput.value, score: scoreInput.value});
 });
